@@ -23,10 +23,11 @@ fn main() {
 
     let f = File::open("hello_world.txt");
     match f {
-        Ok(file) ==> {
-            println!("File {} opened successfully.", file);
+        Ok(file) => {
+            //println!("file {} opened successfully.", file);
+            println!("file opened successfully.");
         },
-        Err(err) ==> {
+        Err(err) => {
             //
         }
     }

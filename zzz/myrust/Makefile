@@ -1,28 +1,25 @@
-#!/bin/sh
+#RUST_BT :=
+RUST_BT := RUST_BACKTRACE=1
+#RUST_BT := RUST_BACKTRACE=full
 
-run_mycode=1
 
-if [ $run_mycode -gt 0 ]; then
+help:
+	@echo "usage: make run | local | linux_arm | win_x64"
 
-	cd mycode
-	#RUST_BACKTRACE=1 cargo r
-	#RUST_BACKTRACE=full cargo r
-	cargo r
+run:
+	${RUST_BT} cargo r
 
-else
+local:
+	cargo b
 
-	SRC="00_hello_world/rust/hello_world.rs"
-	if [ ! -z $1 ]; then
-	  SRC=$1
-	fi
+win_x64:
+	# 交叉汇编 windows 系统 amd64 架构的目标文件:
+	${CPL_FLAGS} GOOS=windows GOARCH=amd64 go build ${CPL_ARGS} -o xxx_x64.exe *.go
 
-	echo "==> compile $SRC into ./out ... "
-	rustc -o out $SRC
-	#echo "<== DONE!"
+linux_arm:
+	# 交叉汇编 linux 系统 arm64 架构的目标文件:
+	${CPL_FLAGS} GOOS=linux GOARCH=arm64 GOARM=7 go build ${CPL_ARGS} -o xxx_arm *.go
 
-	#echo ""
-	echo "==> run ./out ... "
-	./out
-	#echo "<== DONE!"
-fi
+clean:
+	rm -rf xxx* *.exe
 
