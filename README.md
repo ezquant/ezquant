@@ -1,8 +1,7 @@
-- 👋 Hi, I’m @ezquant
-- 👀 I’m interested in quant.
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+- 👋 Hi, I’m vedasky.z @ezquant
+- 👀 I’m interested in quant and AI.
+- 🌱 I’m currently learning AI and trading.
+- 💞️ I’m looking to collaborate on crypto coins trading.
+- 📫 How to reach me: 6664518 (at) qq (dot) com
 
-Trading master!
-
+Good good study, day day up!
